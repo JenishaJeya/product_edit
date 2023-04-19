@@ -8,7 +8,7 @@ export default function ProductList() {
   const [location, setLocation] = useLocation();
   const [productList, setProductList] = useState([]);
   useEffect(() => {
-    fetch(HOST + "/products")
+    fetch(HOST + "/product")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

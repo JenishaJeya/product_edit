@@ -15,7 +15,7 @@ export default function ProductList() {
   useEffect(() => {
     // We only lookup if we have a vaild ID
     if (params && params.id) {
-      fetch(HOST + "/products/" + params.id)
+      fetch(HOST + "/product/" + params.id)
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
@@ -60,7 +60,7 @@ export default function ProductList() {
         _id: ID,
       };
 
-      fetch(HOST + "/products/", {
+      fetch(HOST + "/product/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -87,7 +87,7 @@ export default function ProductList() {
 
   const deleteProduct = () => {
     if (ID && name.length > 0 && name.length < 50) {
-      fetch(HOST + "/products/" + ID, {
+      fetch(HOST + "/product/" + ID, {
         method: "DELETE", // *GET, POST, PUT, DELETE, etc.
         headers: {
           "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export default function ProductList() {
     if (ID && name.length > 0 && name.length < 50) {
       fetch(
         HOST +
-          "/products/" +
+          "/product/" +
           ID +
           "?name=" +
           name +
